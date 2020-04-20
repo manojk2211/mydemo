@@ -1,0 +1,30 @@
+<p>
+  heroes works!
+</p>
+<h3>{{hero_obj.name}} Details</h3>
+<p>Id:{{hero_obj.id}}</p>
+<p>Name:<input type="text" [(ngModel)] = "hero_obj.name" /></p>
+
+<ul>
+  <li *ngFor = "let hero of heroList" (click)="onSelect(hero)"  [class.active]="hero === selectedHero">
+     <span>{{hero.id}} &nbsp;</span>{{hero.name}}
+  </li>     
+</ul>
+
+<div *ngIf = "selectedHero" >
+   <h3>{{selectedHero.name}} ff Details</h3>
+   <p>id: {{selectedHero.id}}</p>
+   <p>name:<input type="text" [(ngModel)] = selectedHero.name /> </p>
+</div>
+
+<p>/*********************input decorator start Feature component************************/</p>
+<!---input decorator start Feature component-->
+<ul>
+  <ng-container *ngFor = "let emp of empList">
+    <li (click) = "onSelectEmp(emp)" [class.active] = "emp==selectEmp">
+      <span class="badge">{{emp.id}} &nbsp;</span>{{emp.name}}
+    </li>
+  </ng-container>
+  
+</ul>
+<app-hero-details [myemp]="selectEmp" ></app-hero-details>

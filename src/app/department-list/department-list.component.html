@@ -1,0 +1,8 @@
+<h3>
+  department-list works!
+</h3>
+<ul>
+  <li (click) = "onSelect(department)" *ngFor = "let department of departments">
+     <span class="badge">{{department.id}} </span>  {{department.name}}
+  </li>
+</ul>

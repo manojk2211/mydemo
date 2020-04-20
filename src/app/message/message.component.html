@@ -1,0 +1,6 @@
+<p>******************message component start**********</p>
+<h2>Messages</h2>
+
+<button class="clear" (click) = "MessageService.clear()" >clear</button>
+<div *ngFor = 'let message of MessageService.messageArray'> {{message}}</div>
+  
